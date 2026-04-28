@@ -1,9 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SekkaEmblem } from "./SekkaEmblem";
-import { Wordmark } from "./Logo";
 
 const links = [
   { href: "#historia", label: "Historia" },
@@ -37,11 +36,24 @@ export function Nav() {
         {/* Left: small logo */}
         <a
           href="#top"
-          className="group flex items-center gap-3 text-gold-light transition-colors hover:text-gold"
+          className="group flex items-center gap-3 transition-opacity hover:opacity-80"
           aria-label="SEKKA — inicio"
         >
-          <SekkaEmblem size={22} strokeWidth={1.1} className="text-gold" />
-          <Wordmark className="text-base tracking-[0.18em]" />
+          <Image
+            src="/brand/sekka-emblem.png"
+            alt=""
+            width={185}
+            height={150}
+            className="h-6 w-auto select-none"
+            aria-hidden
+          />
+          <Image
+            src="/brand/sekka-wordmark.png"
+            alt="SEKKA"
+            width={915}
+            height={243}
+            className="h-4 w-auto select-none"
+          />
         </a>
 
         {/* Desktop links */}

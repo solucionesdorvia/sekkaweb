@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionLabel } from "./SectionLabel";
-import { SekkaEmblem } from "./SekkaEmblem";
 
 const WHATSAPP = "https://wa.me/549XXXXXXXXX";
 const INSTAGRAM_HANDLE = "@sekka.artesanal";
@@ -37,12 +37,15 @@ export function Contacto() {
             <SectionLabel index="III" label="Contacto" align="center" />
           </motion.div>
 
-          <motion.div
-            custom={1}
-            variants={fadeUp}
-            className="mt-12 text-gold/80"
-          >
-            <SekkaEmblem size={48} strokeWidth={0.85} />
+          <motion.div custom={1} variants={fadeUp} className="mt-12">
+            <Image
+              src="/brand/sekka-emblem.png"
+              alt=""
+              width={185}
+              height={150}
+              className="h-12 w-auto select-none"
+              aria-hidden
+            />
           </motion.div>
 
           <motion.h2
