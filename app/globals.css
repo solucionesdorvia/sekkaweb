@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0d0d0d;
+  --ink-700: #1a1a1a;
+  --gold: #c9a84c;
+  --gold-light: #f0d080;
+  --gold-deep: #8a6e2a;
+  --bone: #e8e2d2;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  background: #0d0d0d;
+  color: var(--bone);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-montserrat), Montserrat, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(201, 168, 76, 0.3);
+  color: #f0d080;
+}
+
+/* Volcanic noise grain — fixed full-screen overlay */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.79  0 0 0 0 0.66  0 0 0 0 0.30  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 220px 220px;
+}
+
+/* Vertical hairline used as section ornament */
+.hairline {
+  background: linear-gradient(
+    180deg,
+    rgba(201, 168, 76, 0) 0%,
+    rgba(201, 168, 76, 0.6) 50%,
+    rgba(201, 168, 76, 0) 100%
+  );
+}
+
+/* Horizontal hairline */
+.hairline-h {
+  background: linear-gradient(
+    90deg,
+    rgba(201, 168, 76, 0) 0%,
+    rgba(201, 168, 76, 0.55) 50%,
+    rgba(201, 168, 76, 0) 100%
+  );
+}
+
+/* Volcanic radial backdrop */
+.volcanic {
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 50% 40%,
+      rgba(201, 168, 76, 0.08) 0%,
+      rgba(13, 13, 13, 0) 60%
+    ),
+    radial-gradient(
+      ellipse 120% 80% at 50% 100%,
+      rgba(138, 110, 42, 0.12) 0%,
+      rgba(13, 13, 13, 0) 70%
+    ),
+    #0d0d0d;
+}
+
+/* Editorial caps style */
+.caps {
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-weight: 400;
+}
+
+.caps-tight {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 400;
+}
+
+/* Custom scrollbar — minimal */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a84c;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
