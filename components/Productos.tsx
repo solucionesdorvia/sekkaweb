@@ -33,7 +33,7 @@ export function Productos() {
         {/* Section heading */}
         <div className="flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
           <div>
-            <SectionLabel index="II" label="Productos" />
+            <SectionLabel index="III" label="Productos" />
             <motion.h2
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}

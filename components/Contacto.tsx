@@ -3,10 +3,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionLabel } from "./SectionLabel";
-
-const WHATSAPP = "https://wa.me/549XXXXXXXXX";
-const INSTAGRAM_HANDLE = "@sekka.artesanal";
-const INSTAGRAM_URL = "https://instagram.com/sekka.artesanal";
+import {
+  WHATSAPP_URL,
+  INSTAGRAM_HANDLE,
+  INSTAGRAM_URL,
+} from "@/lib/config";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -34,7 +35,7 @@ export function Contacto() {
           className="flex flex-col items-center"
         >
           <motion.div custom={0} variants={fadeUp}>
-            <SectionLabel index="III" label="Contacto" align="center" />
+            <SectionLabel index="IV" label="Contacto" align="center" />
           </motion.div>
 
           <motion.div custom={1} variants={fadeUp} className="mt-12">
@@ -73,7 +74,7 @@ export function Contacto() {
             className="mt-12 flex flex-col items-center gap-6 md:mt-16"
           >
             <a
-              href={WHATSAPP}
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-4 border border-gold/70 px-10 py-5 caps text-[0.7rem] text-gold transition-colors duration-700 hover:text-ink"

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { GoldParticles } from "./GoldParticles";
+import { WHATSAPP_URL } from "@/lib/config";
 
 const TAGLINE = "DESHIDRATADOS ARTESANALES";
 
@@ -126,6 +127,44 @@ export function Hero() {
         >
           el tiempo, la luz y el aire — recogidos en cada lámina.
         </motion.p>
+
+        {/* appetite line — concrete, sells */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 3.9, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-8 caps text-[0.55rem] text-gold/70"
+        >
+          Fruta real · secada lentamente · sin conservantes
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 4.2, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-8 flex flex-col items-center gap-4 sm:flex-row"
+        >
+          <a
+            href="#productos"
+            className="group relative inline-flex items-center gap-3 border border-gold/70 px-8 py-4 caps text-[0.65rem] text-gold transition-colors duration-700 hover:text-ink"
+          >
+            <span
+              aria-hidden
+              className="absolute inset-0 origin-left scale-x-0 bg-gold transition-transform duration-700 ease-out-expo group-hover:scale-x-100"
+            />
+            <span className="relative z-10">Ver productos</span>
+          </a>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-3 caps text-[0.65rem] text-bone/70 transition-colors duration-500 hover:text-gold"
+          >
+            <span className="block h-px w-6 bg-gold/40 transition-all duration-500 group-hover:w-10 group-hover:bg-gold" />
+            Pedí por WhatsApp
+          </a>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}
@@ -133,7 +172,7 @@ export function Hero() {
         href="#historia"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 3.9 }}
+        transition={{ duration: 1, delay: 4.6 }}
         className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3"
         aria-label="Continuar a Historia"
       >

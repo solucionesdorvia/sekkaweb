@@ -18,21 +18,26 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "SEKKA — Deshidratados Artesanales",
+  title: "SEKKA — Frutas Deshidratadas Premium Artesanales | Argentina",
   description:
-    "SEKKA. Deshidratados artesanales. El tiempo como ingrediente principal. Frutas y vegetales seleccionados, procesados con paciencia.",
+    "Frutas deshidratadas premium artesanales. Fruta real, secada lentamente, sin azúcar agregada y sin conservantes. Snacks naturales hechos en Argentina, en lotes pequeños.",
   keywords: [
     "SEKKA",
-    "deshidratados",
-    "artesanal",
-    "frutas deshidratadas",
-    "snacks naturales",
-    "Argentina",
+    "frutas deshidratadas premium argentina",
+    "frutas deshidratadas artesanales",
+    "snacks saludables",
+    "snacks naturales argentina",
+    "fruta seca natural",
+    "snacks sin azúcar agregada",
+    "snacks sin conservantes",
+    "naranja deshidratada",
   ],
   openGraph: {
-    title: "SEKKA — Deshidratados Artesanales",
-    description: "El tiempo como ingrediente principal.",
+    title: "SEKKA — Frutas Deshidratadas Premium Artesanales",
+    description:
+      "Fruta real, secada lentamente. Sin azúcar agregada, sin conservantes. El tiempo como ingrediente principal.",
     type: "website",
+    locale: "es_AR",
   },
 };
 

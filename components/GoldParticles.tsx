@@ -9,9 +9,11 @@ import { motion } from "framer-motion";
  */
 export function GoldParticles({ count = 36 }: { count?: number }) {
   const particles = useMemo(() => {
+    // round to a fixed precision so the SSR and client style strings are
+    // byte-identical (Math.sin can differ in trailing digits across engines)
     const rand = (seed: number) => {
       const x = Math.sin(seed * 9301 + 49297) * 233280;
-      return x - Math.floor(x);
+      return Math.round((x - Math.floor(x)) * 1e4) / 1e4;
     };
     return Array.from({ length: count }).map((_, i) => {
       const x = rand(i + 1) * 100;
