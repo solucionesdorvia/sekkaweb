@@ -3,13 +3,60 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionLabel } from "./SectionLabel";
+import { whatsappProductUrl } from "@/lib/config";
+
+type Product = {
+  slug: string;
+  name: string;
+  img: string;
+  note: string;
+};
+
+const products: Product[] = [
+  {
+    slug: "naranja",
+    name: "Naranja",
+    img: "/products/naranja-deshidratada.png",
+    note: "Cítrica e intensa, con cuerpo y final amargo justo.",
+  },
+  {
+    slug: "pomelo",
+    name: "Pomelo",
+    img: "/products/pomelo-deshidratada.jpg",
+    note: "Amargor elegante y aroma fresco. Final limpio.",
+  },
+  {
+    slug: "manzana",
+    name: "Manzana",
+    img: "/products/manzana-deshidratada.jpg",
+    note: "Dulce y delicada, con un dejo a especias.",
+  },
+  {
+    slug: "manzana-verde",
+    name: "Manzana Verde",
+    img: "/products/manzana-verde-deshidratada.jpg",
+    note: "Ácida y fresca, crocante y luminosa.",
+  },
+  {
+    slug: "pera",
+    name: "Pera",
+    img: "/products/pera-deshidratada.jpg",
+    note: "Suave y floral, dulzor sutil y textura tierna.",
+  },
+  {
+    slug: "anana",
+    name: "Ananá",
+    img: "/products/anana-deshidratada.jpg",
+    note: "Tropical y jugosa, sabor concentrado al máximo.",
+  },
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 1, delay: 0.1 + i * 0.12, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 1, delay: 0.05 + i * 0.08, ease: [0.16, 1, 0.3, 1] },
   }),
 };
 
@@ -41,8 +88,8 @@ export function Productos() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="mt-8 max-w-2xl font-serif text-4xl leading-tight text-bone md:text-6xl"
             >
-              Una <span className="italic text-gold-light">primera pieza</span>
-              , trabajada hasta el último corte.
+              La colección,{" "}
+              <span className="italic text-gold-light">fruta por fruta</span>.
             </motion.h2>
           </div>
           <motion.p
@@ -52,123 +99,85 @@ export function Productos() {
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-xs font-sans text-sm leading-relaxed text-bone/60"
           >
-            Abrimos la carta con nuestra naranja deshidratada — corte fino,
-            secado lento, color profundo. El resto de la colección llega
-            próximamente.
+            Seis variedades, un mismo método: corte fino, secado lento, sin
+            azúcar añadido ni conservantes. Solo fruta y tiempo.
           </motion.p>
         </div>
 
-        {/* Featured product spread */}
-        <div className="mt-20 grid grid-cols-1 gap-px bg-gold/10 md:mt-28 md:grid-cols-12">
-          {/* LEFT: photo */}
-          <motion.figure
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative md:col-span-7"
-          >
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink-900">
-              {/* radial glow that intensifies on hover */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-0 z-10 opacity-70 transition-opacity duration-700 group-hover:opacity-100"
-                style={{
-                  background:
-                    "radial-gradient(ellipse 60% 50% at 50% 55%, rgba(201,168,76,0.18) 0%, rgba(13,13,13,0) 70%)",
-                }}
-              />
-              <Image
-                src="/products/naranja-deshidratada.png"
-                alt="Naranja deshidratada SEKKA — paquete artesanal"
-                fill
-                priority
-                sizes="(min-width: 768px) 60vw, 100vw"
-                className="object-cover transition-transform duration-[1400ms] ease-out-expo group-hover:scale-[1.03]"
-              />
-              {/* corner brackets */}
-              <span className="pointer-events-none absolute left-4 top-4 z-20 h-4 w-4 border-l border-t border-gold/60" />
-              <span className="pointer-events-none absolute right-4 top-4 z-20 h-4 w-4 border-r border-t border-gold/60" />
-              <span className="pointer-events-none absolute bottom-4 left-4 z-20 h-4 w-4 border-b border-l border-gold/60" />
-              <span className="pointer-events-none absolute bottom-4 right-4 z-20 h-4 w-4 border-b border-r border-gold/60" />
-            </div>
-          </motion.figure>
-
-          {/* RIGHT: product card */}
-          <motion.article
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-10%" }}
-            className="relative flex flex-col justify-between bg-ink-900 p-8 md:col-span-5 md:p-12 lg:p-14"
-          >
-            <div className="flex flex-col gap-8">
-              <motion.div
-                custom={0}
-                variants={fadeUp}
-                className="flex items-center justify-between"
-              >
-                <span className="caps text-[0.6rem] text-gold/70">N° 01</span>
-                <span className="caps text-[0.6rem] text-bone/40">
-                  Lote artesanal
-                </span>
-              </motion.div>
-
-              <motion.h3
-                custom={1}
-                variants={fadeUp}
-                className="font-serif text-4xl leading-[1.05] text-gold-light md:text-5xl lg:text-[3.2rem]"
-              >
-                Naranja
-                <br />
-                <span className="italic">Deshidratada</span>
-              </motion.h3>
-
-              <motion.div
-                custom={2}
-                variants={fadeUp}
-                className="h-px w-16 bg-gold"
-                aria-hidden
-              />
-
-              <motion.p
-                custom={3}
-                variants={fadeUp}
-                className="font-sans text-base leading-relaxed text-bone/75"
-              >
-                Rodajas finas de naranja seleccionada en su punto exacto de
-                madurez. Secado lento, sin azúcar añadido, sin conservantes —
-                solo fruta y tiempo.
-              </motion.p>
-
-              <motion.dl
-                custom={4}
-                variants={fadeUp}
-                className="grid grid-cols-2 gap-x-6 gap-y-4 pt-4 text-sm"
-              >
-                <Spec label="Origen" value="Argentina" />
-                <Spec label="Corte" value="Rodaja fina" />
-                <Spec label="Proceso" value="Secado lento" />
-                <Spec label="Conservantes" value="Ninguno" />
-              </motion.dl>
-            </div>
-
-            <motion.div
-              custom={5}
+        {/* Product grid */}
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-8%" }}
+          className="mt-20 grid grid-cols-1 gap-px bg-gold/10 sm:grid-cols-2 md:mt-28 lg:grid-cols-3"
+        >
+          {products.map((p, i) => (
+            <motion.article
+              key={p.slug}
+              custom={i}
               variants={fadeUp}
-              className="mt-10 flex items-center gap-4 pt-8 md:mt-0"
+              className="group relative flex flex-col bg-ink-900"
             >
-              <a
-                href="#contacto"
-                className="group inline-flex items-center gap-3 caps text-[0.65rem] text-gold transition-colors duration-500 hover:text-gold-light"
-              >
-                <span className="block h-px w-8 bg-gold transition-all duration-500 group-hover:w-12" />
-                Consultar disponibilidad
-              </a>
-            </motion.div>
-          </motion.article>
-        </div>
+              {/* photo */}
+              <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink-900">
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 z-10 opacity-60 transition-opacity duration-700 group-hover:opacity-100"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse 60% 50% at 50% 55%, rgba(201,168,76,0.18) 0%, rgba(13,13,13,0) 70%)",
+                  }}
+                />
+                <Image
+                  src={p.img}
+                  alt={`${p.name} deshidratada SEKKA — paquete artesanal`}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-[1400ms] ease-out-expo group-hover:scale-[1.03]"
+                />
+                {/* corner brackets reveal on hover */}
+                <span className="pointer-events-none absolute left-4 top-4 z-20 h-4 w-4 border-l border-t border-gold/0 transition-colors duration-500 group-hover:border-gold/60" />
+                <span className="pointer-events-none absolute right-4 top-4 z-20 h-4 w-4 border-r border-t border-gold/0 transition-colors duration-500 group-hover:border-gold/60" />
+                <span className="pointer-events-none absolute bottom-4 left-4 z-20 h-4 w-4 border-b border-l border-gold/0 transition-colors duration-500 group-hover:border-gold/60" />
+                <span className="pointer-events-none absolute bottom-4 right-4 z-20 h-4 w-4 border-b border-r border-gold/0 transition-colors duration-500 group-hover:border-gold/60" />
+              </div>
 
-        {/* Below-fold: collection note */}
+              {/* card body */}
+              <div className="flex flex-1 flex-col gap-5 p-8 md:p-9">
+                <div className="flex items-center justify-between">
+                  <span className="caps text-[0.6rem] text-gold/70">
+                    N° 0{i + 1}
+                  </span>
+                  <span className="caps text-[0.55rem] text-bone/40">
+                    Lote artesanal
+                  </span>
+                </div>
+
+                <h3 className="font-serif text-3xl leading-none text-gold-light md:text-[2.1rem]">
+                  {p.name}
+                </h3>
+
+                <span aria-hidden className="h-px w-12 bg-gold/40" />
+
+                <p className="font-sans text-sm leading-relaxed text-bone/70">
+                  {p.note}
+                </p>
+
+                <a
+                  href={whatsappProductUrl(p.name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/cta mt-auto inline-flex items-center gap-3 pt-2 caps text-[0.62rem] text-gold transition-colors duration-500 hover:text-gold-light"
+                >
+                  <span className="block h-px w-8 bg-gold transition-all duration-500 group-hover/cta:w-12" />
+                  Consultar por WhatsApp
+                </a>
+              </div>
+            </motion.article>
+          ))}
+        </motion.div>
+
+        {/* closing note */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -178,19 +187,10 @@ export function Productos() {
         >
           <span aria-hidden className="block h-px w-12 bg-gold/40" />
           <p className="text-center font-serif text-sm italic text-bone/50">
-            Próximas variedades en preparación — frutas y vegetales de estación.
+            Lotes pequeños y trazables — frutas de estación, todo el año.
           </p>
         </motion.div>
       </div>
     </section>
-  );
-}
-
-function Spec({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex flex-col gap-1.5">
-      <dt className="caps text-[0.55rem] text-gold/60">{label}</dt>
-      <dd className="font-serif text-base text-bone">{value}</dd>
-    </div>
   );
 }

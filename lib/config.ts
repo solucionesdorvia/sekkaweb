@@ -11,5 +11,11 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURICo
   WHATSAPP_MESSAGE,
 )}`;
 
+// CTA por producto — abre WhatsApp con un mensaje que menciona la fruta.
+export const whatsappProductUrl = (fruta: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    `Hola SEKKA, quiero consultar por la ${fruta}.`,
+  )}`;
+
 export const INSTAGRAM_HANDLE = "@sekka.artesanal";
 export const INSTAGRAM_URL = "https://instagram.com/sekka.artesanal";
