@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { GoldParticles } from "./GoldParticles";
-import { WHATSAPP_URL } from "@/lib/config";
+import { WHATSAPP_ORDER_URL } from "@/lib/config";
 
 const TAGLINE = "DESHIDRATADOS ARTESANALES";
 
@@ -156,10 +156,10 @@ export function Hero() {
             <span className="relative z-10">Ver productos</span>
           </a>
           <a
-            href={WHATSAPP_URL}
+            href={WHATSAPP_ORDER_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 caps text-[0.65rem] text-bone/70 transition-colors duration-500 hover:text-gold"
+            className="group inline-flex items-center gap-3 rounded-sm caps text-[0.65rem] text-bone/70 transition-colors duration-500 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
           >
             <span className="block h-px w-6 bg-gold/40 transition-all duration-500 group-hover:w-10 group-hover:bg-gold" />
             Pedí por WhatsApp

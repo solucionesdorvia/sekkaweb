@@ -4,6 +4,7 @@ import { Beneficios } from "@/components/Beneficios";
 import { Historia } from "@/components/Historia";
 import { Proceso } from "@/components/Proceso";
 import { Productos } from "@/components/Productos";
+import { VendeSekka } from "@/components/VendeSekka";
 import { Contacto } from "@/components/Contacto";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
@@ -16,6 +17,7 @@ export default function Page() {
       <Historia />
       <Proceso />
       <Productos />
+      <VendeSekka />
       <Contacto />
       <WhatsAppFloat />
     </main>
