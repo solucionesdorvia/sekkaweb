@@ -26,7 +26,7 @@ export function WhatsAppFloat() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 12 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="group fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-gold/40 bg-ink/90 text-gold shadow-[0_8px_30px_rgba(0,0,0,0.5)] backdrop-blur-md transition-colors duration-500 hover:bg-gold hover:text-ink md:bottom-8 md:right-8"
+          className="focusable group fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-gold/40 bg-ink/90 text-gold shadow-[0_8px_30px_rgba(0,0,0,0.5)] backdrop-blur-md transition-colors duration-500 hover:bg-gold hover:text-ink md:bottom-8 md:right-8"
         >
           <svg
             width="24"

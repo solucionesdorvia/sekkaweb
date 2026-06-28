@@ -171,7 +171,7 @@ export function Productos() {
                   href={whatsappProductUrl(p.name)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/cta mt-auto inline-flex items-center gap-3 pt-2 caps text-[0.62rem] text-gold transition-colors duration-500 hover:text-gold-light"
+                  className="focusable group/cta mt-auto inline-flex items-center gap-3 pt-2 caps text-[0.62rem] text-gold transition-colors duration-500 hover:text-gold-light"
                 >
                   <span className="block h-px w-8 bg-gold transition-all duration-500 group-hover/cta:w-12" />
                   Consultar por WhatsApp
@@ -218,9 +218,12 @@ export function Productos() {
             Pedí por WhatsApp
           </a>
 
-          <p className="max-w-sm font-sans text-xs leading-relaxed text-bone/40">
-            Cierre de pedido por WhatsApp · lotes pequeños y trazables, frutas de
-            estación todo el año.
+          <p className="caps text-[0.5rem] text-gold/60">
+            Producción artesanal semanal · lotes limitados
+          </p>
+          <p className="max-w-sm font-sans text-xs leading-relaxed text-bone/45">
+            Cierre de pedido y envío a coordinar por WhatsApp. Frutas de estación,
+            todo el año.
           </p>
         </motion.div>
       </div>

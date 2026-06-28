@@ -147,7 +147,7 @@ export function Hero() {
         >
           <a
             href="#productos"
-            className="group relative inline-flex items-center gap-3 border border-gold/70 px-8 py-4 caps text-[0.65rem] text-gold transition-colors duration-700 hover:text-ink"
+            className="focusable group relative inline-flex items-center gap-3 border border-gold/70 px-8 py-4 caps text-[0.65rem] text-gold transition-colors duration-700 hover:text-ink"
           >
             <span
               aria-hidden
@@ -173,7 +173,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 4.6 }}
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3"
+        className="focusable absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3"
         aria-label="Continuar a Historia"
       >
         <span className="caps text-[0.55rem] text-gold/60">Continuar</span>

@@ -96,6 +96,38 @@ body {
   font-weight: 400;
 }
 
+/* Accessible focus ring — consistent across every interactive element */
+.focusable:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Anchored sections clear the fixed nav when jumped to */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+/* Skip-to-content link — visible only on keyboard focus */
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%) translateY(-160%);
+  background: var(--gold);
+  color: var(--ink);
+  padding: 10px 20px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.skip-link:focus {
+  transform: translateX(-50%) translateY(0);
+  outline: none;
+}
+
 /* Custom scrollbar — minimal */
 ::-webkit-scrollbar {
   width: 8px;

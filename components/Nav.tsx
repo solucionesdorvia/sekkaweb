@@ -37,7 +37,7 @@ export function Nav() {
         {/* Left: small logo */}
         <a
           href="#top"
-          className="group flex items-center gap-3 transition-opacity hover:opacity-80"
+          className="focusable group flex items-center gap-3 transition-opacity hover:opacity-80"
           aria-label="SEKKA — inicio"
         >
           <Image
@@ -64,7 +64,7 @@ export function Nav() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="caps-tight text-[0.7rem] text-bone/70 hover:text-gold transition-colors duration-500"
+                  className="focusable caps-tight text-[0.7rem] text-bone/70 hover:text-gold transition-colors duration-500"
                 >
                   {l.label}
                 </a>
@@ -78,7 +78,7 @@ export function Nav() {
           aria-label="Abrir menú"
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
-          className="md:hidden flex h-9 w-9 flex-col items-center justify-center gap-[5px]"
+          className="focusable md:hidden flex h-9 w-9 flex-col items-center justify-center gap-[5px]"
         >
           <span
             className={`block h-px w-6 bg-gold transition-all duration-500 ${
@@ -118,7 +118,7 @@ export function Nav() {
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="font-serif text-3xl tracking-[0.18em] text-gold-light hover:text-gold transition-colors"
+                    className="focusable inline-block font-serif text-3xl tracking-[0.18em] text-gold-light hover:text-gold transition-colors"
                   >
                     {l.label}
                   </a>
