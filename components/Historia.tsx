@@ -67,7 +67,7 @@ export function Historia() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-10%" }}
-            className="space-y-8 text-bone/75"
+            className="space-y-8 text-bone/85"
           >
             <motion.p
               custom={0}

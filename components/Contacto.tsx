@@ -61,7 +61,7 @@ export function Contacto() {
           <motion.p
             custom={3}
             variants={fadeUp}
-            className="mt-8 max-w-xl font-sans text-base leading-relaxed text-bone/60"
+            className="mt-8 max-w-xl font-sans text-base leading-relaxed text-bone/80"
           >
             Trabajamos con tiendas, hoteles y cocinas que comparten una misma
             obsesión: el detalle. Escribinos y diseñamos una selección a la
@@ -77,13 +77,8 @@ export function Contacto() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-4 border border-gold/70 px-10 py-5 caps text-[0.7rem] text-gold transition-colors duration-700 hover:text-ink"
+              className="group relative inline-flex items-center gap-4 border border-gold bg-gold px-10 py-5 caps text-[0.7rem] text-ink shadow-[0_8px_30px_rgba(201,168,76,0.2)] transition-colors duration-500 hover:bg-gold-light hover:border-gold-light"
             >
-              {/* fill that slides in */}
-              <span
-                aria-hidden
-                className="absolute inset-0 origin-left scale-x-0 bg-gold transition-transform duration-700 ease-out-expo group-hover:scale-x-100"
-              />
               <span className="relative z-10 flex items-center gap-4">
                 <svg
                   width="14"
