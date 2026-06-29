@@ -14,9 +14,10 @@ export const PRECIO_BOLSA = "$5.000";
 // Pedido / compra — botón principal "Pedí por WhatsApp".
 export const WHATSAPP_ORDER_URL = waUrl("Hola! Quiero pedir SEKKA 🌿");
 
-// Mayorista / comercios — sección "Vendé SEKKA". El precio mayorista NUNCA va en la web.
-export const WHATSAPP_WHOLESALE_URL = waUrl(
-  "Hola! Tengo un comercio y quiero vender SEKKA. ¿Me pasás la lista mayorista?",
+// Reventa — sección "¿Querés vender SEKKA?". Abierta a cualquiera (con o sin local).
+// El precio de reventa NUNCA va en la web: se pasa por WhatsApp.
+export const WHATSAPP_RESELL_URL = waUrl(
+  "Hola! Quiero vender SEKKA. ¿Cómo es la reventa?",
 );
 
 // Consulta general (contacto / negocio).

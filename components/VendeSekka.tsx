@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { WHATSAPP_WHOLESALE_URL } from "@/lib/config";
+import { WHATSAPP_RESELL_URL } from "@/lib/config";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -15,7 +15,7 @@ const fadeUp = {
 export function VendeSekka() {
   return (
     <section
-      id="mayorista"
+      id="reventa"
       className="relative px-6 py-28 md:px-10 md:py-36"
     >
       <div className="mx-auto max-w-[1100px]">
@@ -41,7 +41,7 @@ export function VendeSekka() {
               variants={fadeUp}
               className="caps text-[0.6rem] text-gold/70"
             >
-              Para comercios
+              Reventa
             </motion.span>
 
             <motion.h2
@@ -49,8 +49,8 @@ export function VendeSekka() {
               variants={fadeUp}
               className="mt-8 max-w-2xl font-serif text-4xl leading-tight text-bone md:text-6xl"
             >
-              ¿Tenés un local?{" "}
-              <span className="italic text-gold-light">Vendé SEKKA</span>
+              ¿Querés vender{" "}
+              <span className="italic text-gold-light">SEKKA</span>?
             </motion.h2>
 
             <motion.p
@@ -58,18 +58,19 @@ export function VendeSekka() {
               variants={fadeUp}
               className="mt-8 max-w-xl font-sans text-base leading-relaxed text-bone/65"
             >
-              Sumá deshidratados premium a tu góndola. Producto diferenciado, con
-              buen margen de reventa y clientes que repiten.
+              Con o sin local. Si tenés un comercio, redes o una buena red de
+              clientes, sumás deshidratados premium con buen margen de reventa y
+              gente que repite.
             </motion.p>
 
             <motion.div custom={3} variants={fadeUp} className="mt-12">
               <a
-                href={WHATSAPP_WHOLESALE_URL}
+                href={WHATSAPP_RESELL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 bg-gold px-10 py-5 caps text-[0.7rem] text-ink transition-colors duration-500 hover:bg-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
               >
-                Quiero la lista mayorista
+                Quiero vender SEKKA
                 <span
                   aria-hidden
                   className="transition-transform duration-500 group-hover:translate-x-1"
@@ -84,7 +85,7 @@ export function VendeSekka() {
               variants={fadeUp}
               className="mt-10 caps text-[0.5rem] leading-relaxed text-bone/40"
             >
-              Dietéticas · cafés de especialidad · almacenes saludables · gimnasios
+              Con o sin local · comercios · revendedores · redes sociales · gimnasios
             </motion.p>
           </div>
         </motion.div>
