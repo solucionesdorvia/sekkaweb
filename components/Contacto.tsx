@@ -54,8 +54,7 @@ export function Contacto() {
             variants={fadeUp}
             className="mt-10 font-serif text-4xl leading-tight text-bone md:text-6xl"
           >
-            ¿Querés llevar{" "}
-            <span className="italic text-gold-light">SEKKA</span> a tu negocio?
+            ¿Hablamos?
           </motion.h2>
 
           <motion.p
@@ -63,9 +62,8 @@ export function Contacto() {
             variants={fadeUp}
             className="mt-8 max-w-xl font-sans text-base leading-relaxed text-bone/80"
           >
-            Trabajamos con tiendas, hoteles y cocinas que comparten una misma
-            obsesión: el detalle. Escribinos y diseñamos una selección a la
-            medida de tu lugar.
+            Pedidos, sabores o envíos — escribinos y te respondemos por
+            WhatsApp.
           </motion.p>
 
           <motion.div

@@ -58,9 +58,9 @@ export function VendeSekka() {
               variants={fadeUp}
               className="mt-8 max-w-xl font-sans text-base leading-relaxed text-bone/65"
             >
-              Con o sin local. Si tenés un comercio, redes o una buena red de
-              clientes, sumás deshidratados premium con buen margen de reventa y
-              gente que repite.
+              Con o sin local. Si tenés un comercio, un bar, una cocina, redes o
+              una buena red de clientes, sumás deshidratados premium con buen
+              margen de reventa y gente que repite.
             </motion.p>
 
             <motion.div custom={3} variants={fadeUp} className="mt-12">
@@ -85,7 +85,7 @@ export function VendeSekka() {
               variants={fadeUp}
               className="mt-10 caps text-[0.5rem] leading-relaxed text-bone/40"
             >
-              Con o sin local · comercios · revendedores · redes sociales · gimnasios
+              Comercios · bares y cafés · hoteles · cocinas · revendedores · redes
             </motion.p>
           </div>
         </motion.div>
