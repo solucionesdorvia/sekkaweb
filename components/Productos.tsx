@@ -8,6 +8,7 @@ import {
   WHATSAPP_ORDER_URL,
   PRECIO_BOLSA,
 } from "@/lib/config";
+import { track } from "@/lib/analytics";
 
 type Product = {
   slug: string;
@@ -171,6 +172,13 @@ export function Productos() {
                   href={whatsappProductUrl(p.name)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    track("whatsapp_click", {
+                      location: "producto",
+                      intent: "consulta",
+                      producto: p.name,
+                    })
+                  }
                   className="focusable group/cta mt-auto inline-flex items-center gap-3 pt-2 caps text-[0.62rem] text-gold transition-colors duration-500 hover:text-gold-light"
                 >
                   <span className="block h-px w-8 bg-gold transition-all duration-500 group-hover/cta:w-12" />
@@ -204,6 +212,7 @@ export function Productos() {
             href={WHATSAPP_ORDER_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track("whatsapp_click", { location: "precio", intent: "pedido" })}
             className="group relative mt-4 inline-flex items-center gap-3 bg-gold px-10 py-5 caps text-[0.7rem] text-ink transition-colors duration-500 hover:bg-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
           >
             <svg

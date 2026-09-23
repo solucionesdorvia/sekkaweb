@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import { INSTAGRAM_URL } from "@/lib/config";
+import { PostHogProvider } from "@/components/PostHogProvider";
 import "./globals.css";
 
 const SITE_URL = "https://sekkaweb-production.up.railway.app";
@@ -121,11 +122,13 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${cormorant.variable} ${montserrat.variable}`}>
       <body className="bg-ink text-bone antialiased">
-        <a href="#top" className="skip-link">
-          Saltar al contenido
-        </a>
-        {children}
-        <div className="grain" aria-hidden />
+        <PostHogProvider>
+          <a href="#top" className="skip-link">
+            Saltar al contenido
+          </a>
+          {children}
+          <div className="grain" aria-hidden />
+        </PostHogProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { WHATSAPP_RESELL_URL } from "@/lib/config";
+import { track } from "@/lib/analytics";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -68,6 +69,7 @@ export function VendeSekka() {
                 href={WHATSAPP_RESELL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track("whatsapp_click", { location: "reventa", intent: "reventa" })}
                 className="group inline-flex items-center gap-3 bg-gold px-10 py-5 caps text-[0.7rem] text-ink transition-colors duration-500 hover:bg-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
               >
                 Quiero vender SEKKA

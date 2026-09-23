@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { WHATSAPP_URL } from "@/lib/config";
+import { track } from "@/lib/analytics";
 
 export function WhatsAppFloat() {
   const [visible, setVisible] = useState(false);
@@ -22,6 +23,7 @@ export function WhatsAppFloat() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Escribir por WhatsApp"
+          onClick={() => track("whatsapp_click", { location: "float", intent: "consulta" })}
           initial={{ opacity: 0, scale: 0.8, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 12 }}

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { GoldParticles } from "./GoldParticles";
 import { WHATSAPP_ORDER_URL } from "@/lib/config";
+import { track } from "@/lib/analytics";
 
 const TAGLINE = "DESHIDRATADOS ARTESANALES";
 
@@ -147,6 +148,7 @@ export function Hero() {
         >
           <a
             href="#productos"
+            onClick={() => track("cta_ver_productos", { location: "hero" })}
             className="focusable group relative inline-flex items-center gap-3 border border-gold/70 px-8 py-4 caps text-[0.65rem] text-gold transition-colors duration-700 hover:text-ink"
           >
             <span
@@ -159,6 +161,7 @@ export function Hero() {
             href={WHATSAPP_ORDER_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track("whatsapp_click", { location: "hero", intent: "pedido" })}
             className="group inline-flex items-center gap-3 rounded-sm caps text-[0.65rem] text-bone/70 transition-colors duration-500 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
           >
             <span className="block h-px w-6 bg-gold/40 transition-all duration-500 group-hover:w-10 group-hover:bg-gold" />

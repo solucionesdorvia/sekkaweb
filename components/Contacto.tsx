@@ -8,6 +8,7 @@ import {
   INSTAGRAM_HANDLE,
   INSTAGRAM_URL,
 } from "@/lib/config";
+import { track } from "@/lib/analytics";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -75,6 +76,7 @@ export function Contacto() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track("whatsapp_click", { location: "contacto", intent: "consulta" })}
               className="focusable group relative inline-flex items-center gap-4 border border-gold bg-gold px-10 py-5 caps text-[0.7rem] text-ink shadow-[0_8px_30px_rgba(201,168,76,0.2)] transition-colors duration-500 hover:bg-gold-light hover:border-gold-light"
             >
               <span className="relative z-10 flex items-center gap-4">
@@ -95,6 +97,7 @@ export function Contacto() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track("instagram_click", { location: "contacto" })}
               className="focusable group inline-flex items-center gap-3 caps text-[0.65rem] text-bone/70 transition-colors duration-500 hover:text-gold"
             >
               <span className="block h-px w-6 bg-gold/40 transition-all duration-500 group-hover:w-10 group-hover:bg-gold" />
