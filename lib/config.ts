@@ -29,5 +29,5 @@ export const WHATSAPP_URL = waUrl(
 export const whatsappProductUrl = (fruta: string) =>
   waUrl(`Hola SEKKA, quiero consultar por la ${fruta}.`);
 
-export const INSTAGRAM_HANDLE = "@sekka.artesanal";
-export const INSTAGRAM_URL = "https://instagram.com/sekka.artesanal";
+export const INSTAGRAM_HANDLE = "@sekka.ar";
+export const INSTAGRAM_URL = "https://instagram.com/sekka.ar";
