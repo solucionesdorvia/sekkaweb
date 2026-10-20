@@ -103,13 +103,6 @@ const jsonLd = {
       description:
         "Bolsa de frutas deshidratadas artesanales: corte fino, secado lento, sin azúcar agregada ni conservantes.",
       category: "Snacks naturales",
-      offers: {
-        "@type": "Offer",
-        priceCurrency: "ARS",
-        price: "5000",
-        availability: "https://schema.org/InStock",
-        url: SITE_URL,
-      },
     },
   ],
 };

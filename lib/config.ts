@@ -8,9 +8,6 @@ export const WHATSAPP_NUMBER = "5491122345776";
 const waUrl = (mensaje: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
 
-// Precio público de la bolsa — ancla premium, visible en la web.
-export const PRECIO_BOLSA = "$5.000";
-
 // Pedido / compra — botón principal "Pedí por WhatsApp".
 export const WHATSAPP_ORDER_URL = waUrl("Hola! Quiero pedir SEKKA 🌿");
 

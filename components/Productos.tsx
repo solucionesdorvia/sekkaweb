@@ -3,11 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionLabel } from "./SectionLabel";
-import {
-  whatsappProductUrl,
-  WHATSAPP_ORDER_URL,
-  PRECIO_BOLSA,
-} from "@/lib/config";
+import { whatsappProductUrl, WHATSAPP_ORDER_URL } from "@/lib/config";
 import { track } from "@/lib/analytics";
 
 type Product = {
@@ -199,20 +195,20 @@ export function Productos() {
         >
           <span aria-hidden className="block h-px w-12 bg-gold/40" />
           <span className="caps text-[0.6rem] text-gold/70">
-            Precio público
+            Hacé tu pedido
           </span>
-          <p className="font-serif text-6xl leading-none text-bone md:text-7xl">
-            {PRECIO_BOLSA}
+          <p className="font-serif text-4xl leading-tight text-bone md:text-5xl">
+            Pedí tu <span className="italic text-gold-light">selección</span>.
           </p>
           <span className="caps text-[0.55rem] text-bone/45">
-            por bolsa · todas las variedades
+            precio y envío a coordinar por WhatsApp
           </span>
 
           <a
             href={WHATSAPP_ORDER_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => track("whatsapp_click", { location: "precio", intent: "pedido" })}
+            onClick={() => track("whatsapp_click", { location: "pedido", intent: "pedido" })}
             className="group relative mt-4 inline-flex items-center gap-3 bg-gold px-10 py-5 caps text-[0.7rem] text-ink transition-colors duration-500 hover:bg-gold-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
           >
             <svg
@@ -231,8 +227,7 @@ export function Productos() {
             Producción artesanal semanal · lotes limitados
           </p>
           <p className="max-w-sm font-sans text-xs leading-relaxed text-bone/45">
-            Cierre de pedido y envío a coordinar por WhatsApp. Frutas de estación,
-            todo el año.
+            Frutas de estación, todo el año.
           </p>
         </motion.div>
       </div>
